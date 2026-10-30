@@ -21,6 +21,7 @@ export function Sidebar({ role = "user" }: { role?: "user" | "admin" }) {
         {admin && <Link href="/products/create" className="side-link"><span>＋</span>Tambah Produk</Link>}
         {!admin && <><Link href="/orders" className="side-link"><span>▣</span>Pesanan Saya</Link><Link href="/checkout" className="side-link"><span>◉</span>Checkout Produk</Link><Link href="/profile" className="side-link"><span>♙</span>Profil</Link></>}
         {admin && <Link href="/admin/profile" className="side-link"><span>♙</span>Profil Admin</Link>}
+        <Link href={admin ? "/admin/login" : "/login"} className="side-link mobile-logout" aria-label="Keluar"><span>↪</span>Keluar</Link>
       </nav>
       <Link href={admin ? "/admin/login" : "/login"} className="side-link logout"><span>↪</span>Keluar</Link>
     </aside>
